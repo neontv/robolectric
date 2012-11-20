@@ -2,6 +2,7 @@ package com.xtremelabs.robolectric;
 
 import android.accounts.AccountManager;
 import android.app.*;
+import android.appwidget.AppWidgetHostView;
 import android.appwidget.AppWidgetManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -147,6 +148,7 @@ public class Robolectric {
                 ShadowAnimationSet.class,
                 ShadowAnimationUtils.class,
                 ShadowApplication.class,
+                ShadowAppWidgetHostView.class,
                 ShadowAppWidgetManager.class,
                 ShadowArrayAdapter.class,
                 ShadowAssetManager.class,
@@ -475,6 +477,10 @@ public class Robolectric {
 
     public static ShadowApplication shadowOf(Application instance) {
         return (ShadowApplication) shadowOf_(instance);
+    }
+
+    public static ShadowAppWidgetHostView shadowOf(AppWidgetHostView instance) {
+        return (ShadowAppWidgetHostView) shadowOf_(instance);
     }
 
     public static ShadowAppWidgetManager shadowOf(AppWidgetManager instance) {
