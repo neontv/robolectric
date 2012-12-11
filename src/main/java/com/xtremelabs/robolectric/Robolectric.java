@@ -1312,6 +1312,10 @@ public class Robolectric {
         ShadowLooper.idleMainLooper(interval);
     }
 
+    public static void idleMainLooperConstantly(boolean shouldIdleConstantly) {
+        ShadowLooper.idleMainLooperConstantly(shouldIdleConstantly);
+    }
+
     public static Scheduler getUiThreadScheduler() {
         return shadowOf(Looper.getMainLooper()).getScheduler();
     }
