@@ -272,6 +272,10 @@ public class ShadowAlertDialog extends ShadowDialog {
             this.context = context;
         }
 
+        public void __constructor__(Context context, int theme) {
+            this.context = context;
+        }
+
         /**
          * Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener. This should be
          * an array type i.e. R.array.foo
