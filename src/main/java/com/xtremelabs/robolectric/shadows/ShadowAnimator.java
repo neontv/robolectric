@@ -1,6 +1,11 @@
 package com.xtremelabs.robolectric.shadows;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.animation.Animator;
+import android.animation.Animator.AnimatorListener;
+
 import com.xtremelabs.robolectric.internal.Implementation;
 import com.xtremelabs.robolectric.internal.Implements;
 import com.xtremelabs.robolectric.internal.RealObject;
@@ -46,4 +51,5 @@ public class ShadowAnimator {
     	notifyStart();
     	notifyEnd();
     }
+
 }

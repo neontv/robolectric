@@ -1133,6 +1133,16 @@ public class ShadowView {
         return touchDelegate;
     }
 
+    @Implementation
+    public boolean performHapticFeedback(int hapticFeedbackType) {
+        hapticFeedbackPerformed = hapticFeedbackType;
+        return true;
+    }
+
+    public int lastHapticFeedbackPerformed() {
+        return hapticFeedbackPerformed;
+    }
+
     public boolean ouyaOnlyMethod() {
         return true;
     }
