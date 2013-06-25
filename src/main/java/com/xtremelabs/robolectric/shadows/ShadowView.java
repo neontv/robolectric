@@ -1146,14 +1146,4 @@ public class ShadowView {
     public boolean ouyaOnlyMethod() {
         return true;
     }
-
-    @Implementation
-    public boolean performHapticFeedback(int hapticFeedbackType) {
-        hapticFeedbackPerformed = hapticFeedbackType;
-        return true;
-    }
-
-    public int lastHapticFeedbackPerformed() {
-        return hapticFeedbackPerformed;
-    }
 }

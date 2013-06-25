@@ -500,58 +500,6 @@ public class ViewTest {
         assertThat(testView.oldt, equalTo(150));
     }
 
-    public void setScaleX_shouldSetScaleX() throws Exception {
-        assertThat(shadowOf(view).getScaleX(), equalTo(1f));
-        shadowOf(view).setScaleX(2.5f);
-        assertThat(shadowOf(view).getScaleX(), equalTo(2.5f));
-        shadowOf(view).setScaleX(0.5f);
-        assertThat(shadowOf(view).getScaleX(), equalTo(0.5f));
-    }
-
-    @Test
-    public void setScaleY_shouldSetScaleY() throws Exception {
-        assertThat(shadowOf(view).getScaleX(), equalTo(1f));
-        shadowOf(view).setScaleY(2.5f);
-        assertThat(shadowOf(view).getScaleY(), equalTo(2.5f));
-        shadowOf(view).setScaleY(0.5f);
-        assertThat(shadowOf(view).getScaleY(), equalTo(0.5f));
-    }
-
-    @Test
-    public void performHapticFeedback_shouldSetLastPerformedHapticFeedback() throws Exception {
-        assertThat(shadowOf(view).lastHapticFeedbackPerformed(), equalTo(-1));
-        view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-        assertThat(shadowOf(view).lastHapticFeedbackPerformed(), equalTo(HapticFeedbackConstants.LONG_PRESS));
-    }
-
-    @Test
-    public void canAssertThatSuperDotOnLayoutWasCalledFromViewSubclasses() throws Exception {
-        TestView2 view = new TestView2(new Activity());
-        assertThat(shadowOf(view).onLayoutWasCalled(), equalTo(false));
-        view.onLayout(true, 1, 2, 3, 4);
-        assertThat(shadowOf(view).onLayoutWasCalled(), equalTo(true));
-    }
-
-    @Test
-    public void setScrolls_canBeAskedFor() throws Exception {
-        view.setScrollX(234);
-        view.setScrollY(544);
-        assertThat(view.getScrollX(), equalTo(234));
-        assertThat(view.getScrollY(), equalTo(544));
-    }
-
-    @Test
-    public void setScrolls_firesOnScrollChanged() throws Exception {
-        TestView testView = new TestView(new Activity());
-        testView.setScrollX(122);
-        testView.setScrollY(150);
-        testView.setScrollX(453);
-        assertThat(testView.oldl, equalTo(122));
-        testView.setScrollY(54);
-        assertThat(testView.l, equalTo(453));
-        assertThat(testView.t, equalTo(54));
-        assertThat(testView.oldt, equalTo(150));
-    }
 
     private static class TestAnimation extends Animation {
     }
