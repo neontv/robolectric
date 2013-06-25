@@ -40,4 +40,10 @@ public class ShadowAnimator {
     public long getDuration() {
         return duration;
     }
+    
+    @Implementation
+    public void start () {
+    	notifyStart();
+    	notifyEnd();
+    }
 }
