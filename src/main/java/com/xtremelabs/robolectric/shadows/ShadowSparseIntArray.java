@@ -49,4 +49,9 @@ public class ShadowSparseIntArray {
 	public int keyAt( int index ){
 		return sparseArray.keyAt( index );
 	}
+
+    @Implementation
+    public void clear() {
+        sparseArray.clear();
+    }
 }
