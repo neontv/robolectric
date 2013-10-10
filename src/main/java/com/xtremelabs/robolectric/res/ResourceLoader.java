@@ -1,13 +1,5 @@
 package com.xtremelabs.robolectric.res;
 
-import static com.xtremelabs.robolectric.Robolectric.shadowOf;
-
-import java.io.*;
-import java.lang.reflect.Field;
-import java.util.HashSet;
-import java.util.Properties;
-import java.util.Set;
-
 import android.R;
 import android.content.Context;
 import android.content.res.XmlResourceParser;
@@ -18,11 +10,18 @@ import android.preference.PreferenceScreen;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.xtremelabs.robolectric.Robolectric;
 import com.xtremelabs.robolectric.shadows.ShadowContextWrapper;
 import com.xtremelabs.robolectric.util.I18nException;
 import com.xtremelabs.robolectric.util.PropertiesHelper;
+
+import java.io.*;
+import java.lang.reflect.Field;
+import java.util.HashSet;
+import java.util.Properties;
+import java.util.Set;
+
+import static com.xtremelabs.robolectric.Robolectric.shadowOf;
 
 public class ResourceLoader {
 	private static final FileFilter MENU_DIR_FILE_FILTER = new FileFilter() {
@@ -150,10 +149,12 @@ public class ResourceLoader {
 				loadPreferenceResources( preferenceDir );
 				loadXmlFileResources( preferenceDir );
 
-                for(File additionalResourceDir : additionalResourceDirs) {
-                    loadViewResources(null, additionalResourceDir);
-                    loadMenuResources(additionalResourceDir);
-                    loadDrawableResources(additionalResourceDir);
+                if (additionalResourceDirs != null) {
+                    for(File additionalResourceDir : additionalResourceDirs) {
+                        loadViewResources(null, additionalResourceDir);
+                        loadMenuResources(additionalResourceDir);
+                        loadDrawableResources(additionalResourceDir);
+                    }
                 }
 				
 				listNinePatchResources(ninePatchDrawableIds, resourceDir);
