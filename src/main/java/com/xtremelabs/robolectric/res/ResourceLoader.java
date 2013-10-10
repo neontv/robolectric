@@ -112,6 +112,11 @@ public class ResourceLoader {
 		return strictI18n;
 	}
 
+    static private File[] additionalResourceDirs;
+    static public void setAdditionalResourceDirs(File[] resourceDirs) {
+        additionalResourceDirs = resourceDirs;
+    }
+
 	private void init() {
 		if ( isInitialized ) {
 			return;
@@ -144,6 +149,12 @@ public class ResourceLoader {
 				loadDrawableResources( resourceDir );
 				loadPreferenceResources( preferenceDir );
 				loadXmlFileResources( preferenceDir );
+
+                for(File additionalResourceDir : additionalResourceDirs) {
+                    loadViewResources(null, additionalResourceDir);
+                    loadMenuResources(additionalResourceDir);
+                    loadDrawableResources(additionalResourceDir);
+                }
 				
 				listNinePatchResources(ninePatchDrawableIds, resourceDir);
 			} else {
