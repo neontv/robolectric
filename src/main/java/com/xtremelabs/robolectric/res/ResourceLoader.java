@@ -151,6 +151,12 @@ public class ResourceLoader {
 
                 if (additionalResourceDirs != null) {
                     for(File additionalResourceDir : additionalResourceDirs) {
+                        File valuesDir = getValueResourceDir(additionalResourceDir, null, true);
+                        loadStringResources(valuesDir, null);
+                        loadPluralsResources(valuesDir, null);
+                        loadValueResources(valuesDir, null);
+                        loadDimenResources(valuesDir, null);
+                        loadIntegerResource(valuesDir, null);
                         loadViewResources(null, additionalResourceDir);
                         loadMenuResources(additionalResourceDir);
                         loadDrawableResources(additionalResourceDir);
