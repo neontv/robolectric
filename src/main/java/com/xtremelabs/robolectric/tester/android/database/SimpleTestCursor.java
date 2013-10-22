@@ -62,4 +62,9 @@ public class SimpleTestCursor extends TestCursor {
     public boolean getCloseWasCalled() {
         return closeWasCalled;
     }
+
+    @Override
+    public int getCount() {
+        return results.length;
+    }
 }
