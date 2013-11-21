@@ -256,8 +256,8 @@ public class ShadowActivity extends ShadowContextWrapper {
         if (id == android.R.id.content) {
             return getContentViewContainer();
         }
-        if (contentViewContainer != null) {
-            return contentViewContainer.findViewById(id);
+        if (contentView != null) {
+            return getContentViewContainer().findViewById(id);
         } else {
             System.out.println("WARNING: you probably should have called setContentView() first");
             Thread.dumpStack();
@@ -268,8 +268,8 @@ public class ShadowActivity extends ShadowContextWrapper {
     private View getContentViewContainer() {
         if (contentViewContainer == null) {
             contentViewContainer = new FrameLayout(realActivity);
+            contentViewContainer.addView(contentView, 0);
         }
-        contentViewContainer.addView(contentView, 0);
         return contentViewContainer;
     }
 
