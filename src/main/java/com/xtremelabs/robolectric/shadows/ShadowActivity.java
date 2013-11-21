@@ -256,8 +256,8 @@ public class ShadowActivity extends ShadowContextWrapper {
         if (id == android.R.id.content) {
             return getContentViewContainer();
         }
-        if (contentView != null) {
-            return contentView.findViewById(id);
+        if (contentViewContainer != null) {
+            return contentViewContainer.findViewById(id);
         } else {
             System.out.println("WARNING: you probably should have called setContentView() first");
             Thread.dumpStack();
