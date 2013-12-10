@@ -160,6 +160,7 @@ public class ResourceLoader {
                         loadViewResources(null, additionalResourceDir);
                         loadMenuResources(additionalResourceDir);
                         loadDrawableResources(additionalResourceDir);
+                        listNinePatchResources(ninePatchDrawableIds, additionalResourceDir);
                     }
                 }
 				
