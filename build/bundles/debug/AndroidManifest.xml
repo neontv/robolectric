@@ -1,0 +1,6 @@
+<!-- From: file:/Users/ryan/OUYA/restructure2/xtremelabs/robolectric/AndroidManifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.xtremelabs.robolectric">
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="19"/>
+
+    <application/>
+</manifest>
